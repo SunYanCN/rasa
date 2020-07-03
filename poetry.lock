@@ -2176,6 +2176,7 @@ version = "0.7.26"
 
 [package.source]
 reference = "rasa-pypi"
+type = "legacy"
 url = "https://pypi.rasa.com/simple"
 
 [[package]]
@@ -2273,7 +2274,7 @@ description = "Python API wrapper for Rocket.Chat"
 name = "rocketchat-api"
 optional = false
 python-versions = "*"
-version = "1.4"
+version = "1.5"
 
 [package.dependencies]
 requests = "*"
@@ -3347,7 +3348,6 @@ multidict = ">=4.0"
 [[package]]
 category = "main"
 description = "Backport of pathlib-compatible object wrapper for zip files"
-marker = "python_version < \"3.7\" and python_version != \"3.4\" or python_version < \"3.8\""
 name = "zipp"
 optional = false
 python-versions = ">=3.6"
@@ -4599,8 +4599,8 @@ rfc3986 = [
     {file = "rfc3986-1.4.0.tar.gz", hash = "sha256:112398da31a3344dc25dbf477d8df6cb34f9278a94fee2625d89e4514be8bb9d"},
 ]
 rocketchat-api = [
-    {file = "rocketchat_API-1.4-py2-none-any.whl", hash = "sha256:91483b2702c0917f8491f69d5b38eba495afae4ce5fee4c46838ea7adb7c2333"},
-    {file = "rocketchat_API-1.4-py3-none-any.whl", hash = "sha256:8a5826a972547a6ffb09db171e1ad9990eebf32ed396a3e1bec1f13c18577311"},
+    {file = "rocketchat_API-1.5-py2-none-any.whl", hash = "sha256:04688e411d805d8796da508d2e5bc4b7453587a27f7e01eac75f7fe14669dfc3"},
+    {file = "rocketchat_API-1.5-py3-none-any.whl", hash = "sha256:2e00bfbdac6d95385a478c065fcdf622665a41fd504c167a9d62f0a85049a85c"},
 ]
 rsa = [
     {file = "rsa-4.6-py3-none-any.whl", hash = "sha256:6166864e23d6b5195a5cfed6cd9fed0fe774e226d8f854fcb23b7bbef0350233"},
