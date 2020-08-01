@@ -2404,7 +2404,7 @@ description = "JWT oauth flow for Sanic"
 name = "sanic-jwt"
 optional = false
 python-versions = "*"
-version = "1.4.1"
+version = "1.5.0"
 
 [package.dependencies]
 pyjwt = "*"
@@ -4700,7 +4700,7 @@ sanic-cors = [
     {file = "Sanic_Cors-0.10.0.post3-py2.py3-none-any.whl", hash = "sha256:b919d65643de810ed1ed15657b8bc75c310fa1ac8eb491d59deaa9404756b745"},
 ]
 sanic-jwt = [
-    {file = "sanic-jwt-1.4.1.tar.gz", hash = "sha256:f55b8c50735340cf943af642cbdfedcf774ca3f9028e60d6784d26cd9be9246b"},
+    {file = "sanic-jwt-1.5.0.tar.gz", hash = "sha256:46fb02a7e12d29405aa3ab91394a2a315a0b754bddf968249da1db4de09dc356"},
 ]
 sanic-plugins-framework = [
     {file = "Sanic-Plugins-Framework-0.9.3.tar.gz", hash = "sha256:9fd3d6270a676134c8440f78ce6f0817574b456d6b0cb7c3d73c06bf1b7f8956"},
