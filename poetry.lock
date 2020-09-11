@@ -2982,7 +2982,7 @@ description = "Community-developed Python SDK for the Webex Teams APIs"
 name = "webexteamssdk"
 optional = false
 python-versions = "*"
-version = "1.3"
+version = "1.6"
 
 [package.dependencies]
 PyJWT = "*"
@@ -3085,6 +3085,7 @@ transformers = ["transformers"]
 
 [metadata]
 content-hash = "2040a142227e55989b2b715620530fad8c600956ac0bd4e260b97eaa85ab53ec"
+lock-version = "1.0"
 python-versions = ">=3.6,<3.9"
 
 [metadata.files]
@@ -4763,7 +4764,8 @@ wcwidth = [
     {file = "wcwidth-0.2.5.tar.gz", hash = "sha256:c4d647b99872929fdb7bdcaa4fbe7f01413ed3d98077df798530e5b04f116c83"},
 ]
 webexteamssdk = [
-    {file = "webexteamssdk-1.3.tar.gz", hash = "sha256:161e0bbc9b7b044f9b765b9b9767642740e3421a428ec7bfc34b1b8e25437127"},
+    {file = "webexteamssdk-1.6-py3-none-any.whl", hash = "sha256:e4958dca3903c659fe1e0f79e38740cb2ec1ae2589599807b179c3efb356c3a2"},
+    {file = "webexteamssdk-1.6.tar.gz", hash = "sha256:980f268d89187d1a157dfbadcb626fce849080a31550e549cfe838f0203b3a3d"},
 ]
 websocket-client = [
     {file = "websocket_client-0.57.0-py2.py3-none-any.whl", hash = "sha256:0fc45c961324d79c781bab301359d5a1b00b13ad1b10415a4780229ef71a5549"},
