@@ -1328,10 +1328,11 @@ description = "A library that allows your python tests to easily mock out the bo
 name = "moto"
 optional = false
 python-versions = "*"
-version = "1.3.14"
+version = "1.3.16"
 
 [package.dependencies]
 Jinja2 = ">=2.10.1"
+MarkupSafe = "<2.0"
 PyYAML = ">=5.1"
 aws-xray-sdk = ">=0.93,<0.96 || >0.96"
 boto = ">=2.36.0"
@@ -1340,21 +1341,38 @@ botocore = ">=1.12.201"
 cfn-lint = ">=0.4.0"
 cryptography = ">=2.3.0"
 docker = ">=2.5.1"
-idna = ">=2.5,<2.9"
-jsondiff = "1.1.2"
+ecdsa = "<0.15"
+idna = ">=2.5,<3"
+jsondiff = ">=1.1.2"
 mock = "*"
+more-itertools = "*"
 python-dateutil = ">=2.1,<3.0.0"
-python-jose = "<4.0.0"
 pytz = "*"
 requests = ">=2.5"
 responses = ">=0.9.0"
+setuptools = "*"
 six = ">1.9"
-sshpubkeys = ">=3.1.0,<4.0"
 werkzeug = "*"
 xmltodict = "*"
+zipp = "*"
+
+[package.dependencies.python-jose]
+extras = ["cryptography"]
+version = ">=3.1.0,<4.0.0"
 
 [package.extras]
-server = ["flask"]
+acm = ["cryptography (>=2.3.0)"]
+all = ["cryptography (>=2.3.0)", "PyYAML (>=5.1)", "python-jose (>=3.1.0,<4.0.0)", "ecdsa (<0.15)", "docker (>=2.5.1)", "jsondiff (>=1.1.2)", "aws-xray-sdk (>=0.93,<0.96 || >0.96)", "idna (>=2.5,<3)", "cfn-lint (>=0.4.0)", "sshpubkeys (>=3.1.0,<4.0)", "sshpubkeys (>=3.1.0)"]
+awslambda = ["docker (>=2.5.1)"]
+batch = ["docker (>=2.5.1)"]
+cloudformation = ["PyYAML (>=5.1)", "cfn-lint (>=0.4.0)"]
+cognitoidp = ["python-jose (>=3.1.0,<4.0.0)", "ecdsa (<0.15)"]
+ec2 = ["cryptography (>=2.3.0)", "sshpubkeys (>=3.1.0,<4.0)", "sshpubkeys (>=3.1.0)"]
+iam = ["cryptography (>=2.3.0)"]
+iotdata = ["jsondiff (>=1.1.2)"]
+s3 = ["cryptography (>=2.3.0)"]
+server = ["cryptography (>=2.3.0)", "PyYAML (>=5.1)", "python-jose (>=3.1.0,<4.0.0)", "ecdsa (<0.15)", "docker (>=2.5.1)", "jsondiff (>=1.1.2)", "aws-xray-sdk (>=0.93,<0.96 || >0.96)", "idna (>=2.5,<3)", "cfn-lint (>=0.4.0)", "flask", "sshpubkeys (>=3.1.0,<4.0)", "sshpubkeys (>=3.1.0)"]
+xray = ["aws-xray-sdk (>=0.93,<0.96 || >0.96)"]
 
 [[package]]
 category = "dev"
@@ -2072,6 +2090,10 @@ pyasn1 = "*"
 rsa = "*"
 six = "<2.0"
 
+[package.dependencies.cryptography]
+optional = true
+version = "*"
+
 [package.extras]
 cryptography = ["cryptography"]
 pycrypto = ["pycrypto (>=2.6.0,<2.7.0)", "pyasn1"]
@@ -2598,21 +2620,6 @@ python-versions = "*"
 version = "1.0.2"
 
 [[package]]
-category = "dev"
-description = "SSH public key parser"
-name = "sshpubkeys"
-optional = false
-python-versions = "*"
-version = "3.1.0"
-
-[package.dependencies]
-cryptography = ">=2.1.4"
-ecdsa = ">=0.13"
-
-[package.extras]
-dev = ["twine", "wheel"]
-
-[[package]]
 category = "main"
 description = "Pretty-print tabular data"
 name = "tabulate"
@@ -3112,7 +3119,6 @@ version = ">=3.7.4"
 [[package]]
 category = "main"
 description = "Backport of pathlib-compatible object wrapper for zip files"
-marker = "sys_platform != \"win32\" and python_version < \"3.8\" or python_version < \"3.8\" or python_version < \"3.7\" and python_version != \"3.4\""
 name = "zipp"
 optional = false
 python-versions = ">=3.6"
@@ -3130,7 +3136,7 @@ spacy = ["spacy"]
 transformers = ["transformers"]
 
 [metadata]
-content-hash = "2a46ee85ef17f2ac341ff2495717401ab06a6c34d9bed76af495bcd40b8ee9cf"
+content-hash = "ca055539082d44fe9c10597a5bcee43129f72037554ec59b9358ffc462127cbf"
 lock-version = "1.0"
 python-versions = ">=3.6,<3.9"
 
@@ -3859,8 +3865,8 @@ more-itertools = [
     {file = "more_itertools-8.5.0-py3-none-any.whl", hash = "sha256:9b30f12df9393f0d28af9210ff8efe48d10c94f73e5daf886f10c4b0b0b4f03c"},
 ]
 moto = [
-    {file = "moto-1.3.14-py2.py3-none-any.whl", hash = "sha256:2b3fa22778504b45715868cad95ad458fdea7227f9005b12e522fc9c2ae0cabc"},
-    {file = "moto-1.3.14.tar.gz", hash = "sha256:79aeaeed1592a24d3c488840065a3fcb3f4fa7ba40259e112482454c0e48a03a"},
+    {file = "moto-1.3.16-py2.py3-none-any.whl", hash = "sha256:f51903b6b532f6c887b111b3343f6925b77eef0505a914138d98290cf3526df9"},
+    {file = "moto-1.3.16.tar.gz", hash = "sha256:6c686b1f117563391957ce47c2106bc3868783d59d0e004d2446dce875bec07f"},
 ]
 msrest = [
     {file = "msrest-0.6.19-py2.py3-none-any.whl", hash = "sha256:87aa64948c3ef3dbf6f6956d2240493e68d714e4621b92b65b3c4d5808297929"},
@@ -4648,10 +4654,6 @@ srsly = [
     {file = "srsly-1.0.2-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:18bad26c34cf5a8853fbf018fd168a7bf2ea7ce661e66476c25dac711cb79c9b"},
     {file = "srsly-1.0.2-cp38-cp38-win_amd64.whl", hash = "sha256:29434753a77481ec6129991f4116f983085cc8005c1ad963261124842e8c05fc"},
     {file = "srsly-1.0.2.tar.gz", hash = "sha256:59258b81d567df207f8a0a33c4b5fa232afccf1d927c8ce3ba5395bfd64c0ed8"},
-]
-sshpubkeys = [
-    {file = "sshpubkeys-3.1.0-py2.py3-none-any.whl", hash = "sha256:9f73d51c2ef1e68cd7bde0825df29b3c6ec89f4ce24ebca3bf9eaa4a23a284db"},
-    {file = "sshpubkeys-3.1.0.tar.gz", hash = "sha256:b388399caeeccdc145f06fd0d2665eeecc545385c60b55c282a15a022215af80"},
 ]
 tabulate = [
     {file = "tabulate-0.8.7-py3-none-any.whl", hash = "sha256:ac64cb76d53b1231d364babcd72abbb16855adac7de6665122f97b593f1eb2ba"},
